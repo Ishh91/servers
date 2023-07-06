@@ -32,7 +32,9 @@ app.post('/register', async (req, res) => {
         res.status(400).json(e);
     }
 });
-
+app.get('/', (req, res) => {
+    res.send("This is a stack overflow clone API")
+})
 app.post('/login', async (req, res) => {
     const { username, password } = req.body;
     const userDoc = await User.findOne({ username });
